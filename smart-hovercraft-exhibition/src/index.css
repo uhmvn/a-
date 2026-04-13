@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --color-soft-blue: #e0f2fe;
+  --color-soft-pink: #fce7f3;
+  --color-primary: #0ea5e9;
+  --color-accent: #f43f5e;
+  --color-gold: #d4af37;
+}
+
+@layer utilities {
+  .cute-shadow {
+    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.1);
+  }
+  
+  .formal-border {
+    border: 8px double var(--color-gold);
+    outline: 2px solid var(--color-gold);
+    outline-offset: -12px;
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+.animate-scan {
+  animation: scan 2s linear infinite;
+}
+
+.tech-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+}
+
+.hologram-overlay {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) 50%,
+    rgba(59, 130, 246, 0.05) 50.5%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 100% 4px;
+}
+
+body {
+  background-color: #f8fafc;
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: #1e293b;
+  overflow-x: hidden;
+}
